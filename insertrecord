@@ -1,0 +1,16 @@
+import mysql.connector as mc
+con=mc.connect(host="localhost",user="root",password="",database="umang");
+mycursor=con.cursor();
+try:
+    #mycursor.execute("insert into students values(1,'tara')");
+    sql="insert  into  students values (%s,%s)";
+    val=(1,"tara");
+    num=mycursor.execute(sql,val);
+    con.commit();
+    if(num>0):
+        print("record inserted");
+    else:
+        print("no record  inserted");
+except:con.rollback();
+
+con.close();
