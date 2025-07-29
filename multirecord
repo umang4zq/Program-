@@ -1,0 +1,8 @@
+import mysql.connector as mc
+con=mc.connect(host="localhost",user="root",password="",database="student");
+mycursor=con.cursor();
+try:
+    mycursor.execute("create table students(student_id int(3),student_name varchar(30),student_stream varchar(30),student_collegename varchar(30),student_contactnumber int(10),student_remark varchar(30))");
+except:
+    con.rollback();
+    con.close();
