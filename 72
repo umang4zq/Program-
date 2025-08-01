@@ -1,0 +1,61 @@
+from tkinter import *
+from tkinter import messagebox
+tk = Tk()
+tk.title("calculate")
+def addition():
+    num1 = no1.get()
+    num2 = no2.get()
+    ans = num1+num2
+
+    no3.set(ans)
+
+
+def sub():
+    num1 = no1.get()
+    num2 = no2.get()
+    ans = num1-num2
+
+    no3.set(ans)
+
+
+def mul():
+    num1 = no1.get()
+    num2 = no2.get()
+    ans = num1*num2
+
+    no3.set(ans)
+
+
+def div():
+    num1 = no1.get()
+    num2 = no2.get()
+    ans = num1/num2
+
+    no3.set(ans)
+
+lab1=Label(tk,text="n1:").grid(row=0, column=0)
+lab2=Label(tk,text="n2:").grid(row=1, column=0)
+lab3=Label(tk,text="answer:").grid(row=2, column=0)
+
+no1=IntVar()
+no2=IntVar()
+no3=IntVar()
+
+txt1=Entry(tk,textvariable=no1).grid(row=0, column=1)
+txt2=Entry(tk,textvariable=no2).grid(row=1, column=1)
+txt3=Entry(tk,textvariable=no3,state=DISABLED).grid(row=2, column=1)
+
+button1=Button(tk,text="addition", command=addition).grid(row=5, column=1)
+button2=Button(tk,text="subtraction", command=sub).grid(row=6, column=1)
+button3=Button(tk,text="multi", command=mul).grid(row=7, column=1)
+button4=Button(tk,text="divison", command=div).grid(row=8, column=1)
+
+
+
+tk.mainloop()
+
+
+
+
+
+
