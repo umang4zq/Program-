@@ -1,0 +1,27 @@
+from tkinter import *
+from tkinter import messagebox
+def red():
+    messagebox.showinfo("Message","red button clicked")
+def blue():
+    messagebox.showinfo("Message","blue button clicked")
+def green():
+    messagebox.showinfo("Message","green button clicked")
+def black():
+    messagebox.showinfo("Message","black button clicked")
+
+tk = Tk()
+tk.title("Button Demo")
+redbutton = Button(tk,bg="black", text="Red", fg="red", command=red)
+redbutton.pack(side = LEFT)
+bluebutton = Button(tk,bg="black", text="Blue", fg="blue", command=blue)
+bluebutton.pack(side = RIGHT)
+greenbutton = Button(tk,bg="black", text="Green", fg="green", command=green)
+greenbutton.pack(side = TOP)
+blackbutton = Button(tk,bg="black", text="Pink", fg="pink", command=black)
+blackbutton.pack(side = BOTTOM)
+
+tk.mainloop()
+
+
+
+
