@@ -1,0 +1,16 @@
+import java.sql.*;
+public class CreateTable
+{
+	public static void main(String []args) throws ClassNotFoundException,SQLException
+	{
+		Connection con = null;
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","admin");
+        System.out.println("Connection Suceessfull");
+		Statement st = con.createStatement();
+		String ddl = "Creat table Student70 (id number(10), name varchar2(10), city varchar2(10))";
+		st.execute(ddl);
+		System.out.println("Table Created");
+	}
+	
+}
