@@ -1,0 +1,30 @@
+
+package demo1_connectiondemo;
+
+import java.sql.*;
+public class Demo1_Connectiondemo 
+{
+
+  
+    public static void main(String[] args) 
+    {     Connection con=null;
+		try
+		{
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			
+			con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","admin");
+			System.out.println("Connection Suceessfull");
+		}
+		catch(ClassNotFoundException cnf)
+		{
+			cnf.printStackTrace();
+		}
+		catch(SQLException sql)
+		{
+			sql.printStackTrace();
+		}
+	}
+}
+    
+    
+
