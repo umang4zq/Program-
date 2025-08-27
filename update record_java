@@ -1,0 +1,28 @@
+import java.sql.*;
+
+public class UpdateRecord {
+    public static void main(String[] args) throws ClassNotFoundException, SQLException {
+        // Load Oracle Driver
+        Class.forName("oracle.jdbc.driver.OracleDriver");
+
+        // Connect to DB
+        Connection con = DriverManager.getConnection(
+                "jdbc:oracle:thin:@localhost:1521:xe", "system", "admin");
+
+        System.out.println("Connection Successful");
+
+        // Create statement
+        Statement st = con.createStatement();
+
+        // Update query
+        String updateSQL = "UPDATE student70 SET city = 'Surat' WHERE id = 1";
+
+        // Execute update
+        int count = st.executeUpdate(updateSQL);
+        System.out.println(count + " record(s) updated.");
+
+        // Close resources
+        st.close();
+        con.close();
+    }
+}
